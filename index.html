@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Tracker</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+        <header>
+            <h1>Travel Tracker</h1>
+             
+            <div class="painel-total">
+                <p>Total Gasto (BRL)</p>
+                <h2 id="total-br">R$ 0,00</h2>
+            </div>
+
+        </header>
+        <section class="formulario">
+            <input type="text" id="desc-despesa" placeholder="Descrição (ex:Almoço)">
+
+            <div class="linha-inputs">
+                <input type="number" id="valor-gringo" placeholder="valor ($/&#8364)" 
+                step="0.01">
+                <input type="number" id="cotacao" placeholder="Cotação (R$)"
+                step="0.01">
+            </div>
+
+            <button id="btn-adicionar">Adicionar Despesas</button>
+        
+        </section>
+
+        <section class="listas-container">
+            <h3> Minhas Despesas</h3>
+            <ul id="lista-despesas">
+            </ul>
+
+        </section>
+  
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
