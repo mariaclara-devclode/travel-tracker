@@ -91,8 +91,7 @@ const atualizarTela = () => {
   let somaTotal = 0;
   // O forEach executa uma função para cada item, somando o valorReal à nossa variável.
   despesas.forEach((item) => {
-    somaTotal += item.valorReal; // Equivalente a: somaTotal = somaTotal
-    +item.valorReal;
+    somaTotal += item.valorReal; // Equivalente a: somaTotal = somaTotal +item.valorReal;
   });
   // Atualizando o elemento de texto no cabeçalho
   totalBrlDOM.textContent = `R$ ${somaTotal.toFixed(2)}`;
