@@ -45,6 +45,7 @@ const adicionarDespesa = () => {
     descricao: desc,
     valorEstrangeiro: valorOriginal,
     valorReal: valorConvertidoBRL,
+    cotacao: cotacao,
   };
 
   // Modificando o Array e salvando
@@ -73,7 +74,9 @@ const atualizarTela = () => {
     <div>
     <strong>${item.descricao}</strong> <br>
 
-    <small>U$ ${item.valorEstrangeiro.toFixed(2)}</small>
+    <button class="btn-excluir" data-id="${item.id}">X</button>
+
+    <small>U$ ${item.valorEstrangeiro.toFixed(2)} x ${item.cotacao}</small>
 </div>
 <span class="valor">R$ ${item.valorReal.toFixed(2)}</span>
 </li>
@@ -99,3 +102,17 @@ const atualizarTela = () => {
 
 // dados antigos que já possam estar salvos no LocalStorage.
 atualizarTela();
+
+// Função para remover despesa
+const removerDespesa = (id) => {
+    despesas = despesas.filter((item) => item.id !== id);
+    salvarNoLocalStorage();
+    atualizarTela();
+  };
+  // Botão excluir
+  listaDespesasDOM.addEventListener("click", (event) => {
+    if (event.target.classList.contains("btn-excluir")) {
+      const id = Number(event.target.getAttribute("data-id"));
+      removerDespesa(id);
+    }
+  });
